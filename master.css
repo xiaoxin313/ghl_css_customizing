@@ -1,14 +1,192 @@
-body {
-  background-color: red !important; /* Change the background color */
-}
-h1, h2, h3 {
-  color: #333 !important; /* Change heading colors */
-}
-.button {
-  background-color: coral !important; /* Button background color */
-  color: white; /* Button text color */
+/**
+ * BrokerEvolve Master CSS - Simplified Single File Version
+ * Version: 1.0 - All-in-one for quick testing
+ * 
+ * This file contains everything in one place for easier deployment
+ * Later you can split it into multiple files for better organization
+ */
+
+/* ===== DESIGN TOKENS ===== */
+:root {
+  /* Colors */
+  --primitive-navy: #020617;
+  --primitive-navy-light: #0f172a;
+  
+  --color-primary: var(--primitive-navy);
+  --color-text-primary: #111827;
+  --color-text-inverse: #ffffff;
+  --color-background: #ffffff;
+  --color-background-alt: #f9fafb;
+  --color-border: #e5e7eb;
+  
+  /* Sidebar */
+  --sidebar-bg: var(--primitive-navy);
+  --sidebar-text: rgba(255, 255, 255, 0.9);
+  --sidebar-text-secondary: rgba(255, 255, 255, 0.7);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-active-bg: rgba(255, 255, 255, 0.15);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  
+  /* Cards */
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --card-radius: 12px;
+  
+  /* Spacing */
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  
+  /* Typography */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --font-medium: 500;
+  --font-semibold: 600;
+  
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Border Radius */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
 }
 
-aside{
-  background-color: red !important;
+/* ===== SIDEBAR OVERRIDES ===== */
+
+/* Main Sidebar Container */
+.sidebar,
+.sidebar-v2-location #sidebar-v2,
+#sidebar-v2,
+.left-sidebar,
+.hl_sidebar,
+#sidebar-v2 .default-bg-color,
+#sidebar-v2.default-bg-color {
+  background-color: var(--sidebar-bg) !important;
+  background: var(--sidebar-bg) !important;
+  border-right: 1px solid var(--sidebar-border) !important;
+}
+
+/* Logo Area */
+.agency-logo-container,
+#sidebar-v2 .agency-logo-container {
+  padding: var(--space-6) var(--space-3) !important;
+  border-bottom: 1px solid var(--sidebar-border) !important;
+}
+
+/* Location Switcher */
+#location-switcher-sidbar-v2 {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: var(--radius-md) !important;
+  margin: var(--space-2) var(--space-3) var(--space-4) !important;
+  padding: var(--space-2) var(--space-3) !important;
+}
+
+.hl_location-text,
+.hl_switcher-loc-name,
+.hl_switcher-loc-city {
+  color: var(--sidebar-text) !important;
+}
+
+/* Search Box */
+#globalSearchOpener {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-md) !important;
+  padding: var(--space-2) var(--space-3) !important;
+  margin: 0 var(--space-3) var(--space-4) !important;
+}
+
+.search-icon,
+.search-placeholder {
+  color: var(--sidebar-text-secondary) !important;
+}
+
+/* Navigation Items */
+.sidebar-v2-location #sidebar-v2 .hl_nav-header nav a,
+.sidebar-v2-location #sidebar-v2 .hl_nav-settings nav a,
+.hl_nav-header nav a,
+.hl_nav-settings nav a {
+  display: flex !important;
+  align-items: center !important;
+  padding: var(--space-3) var(--space-4) !important;
+  margin: 2px var(--space-3) !important;
+  color: var(--sidebar-text) !important;
+  font-size: var(--text-sm) !important;
+  font-weight: var(--font-medium) !important;
+  border-radius: var(--radius-md) !important;
+  transition: var(--transition-fast) !important;
+  opacity: 0.85 !important;
+}
+
+/* Navigation Hover */
+.sidebar-v2-location #sidebar-v2 .hl_nav-header nav a:hover,
+.sidebar-v2-location #sidebar-v2 .hl_nav-settings nav a:hover,
+.hl_nav-header nav a:hover,
+.hl_nav-settings nav a:hover {
+  background: var(--sidebar-hover-bg) !important;
+  opacity: 1 !important;
+}
+
+/* Navigation Active */
+.sidebar-v2-location #sidebar-v2 .hl_nav-header nav a.active,
+.sidebar-v2-location #sidebar-v2 .hl_nav-settings nav a.active,
+.hl_nav-header nav a.active {
+  background: var(--sidebar-active-bg) !important;
+  color: var(--color-text-inverse) !important;
+  opacity: 1 !important;
+  font-weight: var(--font-semibold) !important;
+}
+
+/* ===== DASHBOARD/CONTENT OVERRIDES ===== */
+
+/* Main Content */
+#dashboard-container {
+  background: var(--color-background-alt) !important;
+  padding: var(--space-6) !important;
+}
+
+/* Cards */
+.hl-card,
+.grid-stack-item-content > div {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: var(--card-radius) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+/* Card Header */
+.hl-card-header {
+  padding: var(--space-4) var(--space-6) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+/* Card Title */
+.hl-text-md-medium {
+  font-size: var(--text-lg) !important;
+  font-weight: var(--font-semibold) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* ===== UTILITY ===== */
+
+/* Apply to body via JavaScript */
+.be-app {
+  font-family: var(--font-primary);
+}
+
+/* Success indicator */
+body.be-app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #10b981, #3b82f6);
+  z-index: 9999;
+  pointer-events: none;
 }
