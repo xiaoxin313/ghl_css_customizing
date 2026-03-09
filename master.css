@@ -8,3 +8,7 @@ h1, h2, h3 {
   background-color: coral !important; /* Button background color */
   color: white; /* Button text color */
 }
+
+aside{
+  background-color: red !important;
+}
