@@ -1,10 +1,10 @@
 body {
-  background-color: red; /* Change the background color */
+  background-color: red !important; /* Change the background color */
 }
 h1, h2, h3 {
-  color: #333; /* Change heading colors */
+  color: #333 !important; /* Change heading colors */
 }
 .button {
-  background-color: coral; /* Button background color */
+  background-color: coral !important; /* Button background color */
   color: white; /* Button text color */
 }
