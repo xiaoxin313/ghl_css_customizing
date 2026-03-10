@@ -241,6 +241,13 @@
   --sidebar-account-text: var(--primitive-sidebar-text-active);
   --sidebar-location-text: var(--primitive-sidebar-text);
 
+  /* Sidebar nav spacing (compact) */
+  --sidebar-nav-padding-y: var(--space-2);
+  --sidebar-nav-padding-x: var(--space-3);
+  --sidebar-nav-margin-y: 0;
+  --sidebar-nav-margin-x: var(--space-2);
+  --sidebar-nav-gap: var(--space-1);
+
   /* Header */
   --header-bg: var(--color-surface);
   --header-bg-dark: var(--color-shell);

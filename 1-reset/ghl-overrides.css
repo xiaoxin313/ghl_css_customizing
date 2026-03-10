@@ -133,8 +133,8 @@ nav.sidebar,
 [class*="sb_"] {
   display: flex !important;
   align-items: center !important;
-  padding: var(--space-3) var(--space-4) !important;
-  margin: 2px var(--space-3) !important;
+  padding: var(--sidebar-nav-padding-y) var(--sidebar-nav-padding-x) !important;
+  margin: var(--sidebar-nav-margin-y) var(--sidebar-nav-margin-x) !important;
   color: var(--sidebar-text) !important;
   font-size: var(--text-sm) !important;
   font-weight: var(--font-normal) !important;
