@@ -16,7 +16,7 @@
   --color-text-primary: #111827;
   --color-text-inverse: #ffffff;
   --color-background: #ffffff;
-  --color-background-alt: #f9fafb;
+  --color-background-alt: #ff0000;
   --color-border: #e5e7eb;
   
   /* Sidebar */
@@ -176,6 +176,7 @@
 /* Apply to body via JavaScript */
 .be-app {
   font-family: var(--font-primary);
+  background-color: var(--color-background-alt) !important;
 }
 
 /* Success indicator */
