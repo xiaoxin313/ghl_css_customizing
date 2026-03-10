@@ -1,0 +1,273 @@
+/**
+ * BrokerEvolve Design Tokens
+ * Version: 1.0
+ * Last Updated: March 2026
+ * 
+ * This file defines all design tokens (CSS variables) used throughout
+ * the BrokerEvolve platform. Never hardcode values - always reference tokens.
+ */
+
+ :root {
+  /* ===== PRIMITIVE COLORS ===== */
+  /* BrokerEvolve Primary Blue */
+  --primitive-be-blue-50: #e6f2ff;
+  --primitive-be-blue-100: #b3d9ff;
+  --primitive-be-blue-200: #80c0ff;
+  --primitive-be-blue-300: #4da6ff;
+  --primitive-be-blue-400: #1a8dff;
+  --primitive-be-blue-500: #0066cc;
+  --primitive-be-blue-600: #0052a3;
+  --primitive-be-blue-700: #003d7a;
+  --primitive-be-blue-800: #002952;
+  --primitive-be-blue-900: #001429;
+
+  /* Navy (Mike's preferred from test account) */
+  --primitive-navy: #020617;
+  --primitive-navy-light: #0f172a;
+  --primitive-navy-dark: #000000;
+
+  /* Neutral Grays */
+  --primitive-gray-50: #f9fafb;
+  --primitive-gray-100: #f3f4f6;
+  --primitive-gray-200: #e5e7eb;
+  --primitive-gray-300: #d1d5db;
+  --primitive-gray-400: #9ca3af;
+  --primitive-gray-500: #6b7280;
+  --primitive-gray-600: #4b5563;
+  --primitive-gray-700: #374151;
+  --primitive-gray-800: #1f2937;
+  --primitive-gray-900: #111827;
+
+  /* State Colors */
+  --primitive-success: #10b981;
+  --primitive-success-light: #d1fae5;
+  --primitive-success-dark: #047857;
+  
+  --primitive-warning: #f59e0b;
+  --primitive-warning-light: #fef3c7;
+  --primitive-warning-dark: #d97706;
+  
+  --primitive-error: #ef4444;
+  --primitive-error-light: #fee2e2;
+  --primitive-error-dark: #dc2626;
+  
+  --primitive-info: #3b82f6;
+  --primitive-info-light: #dbeafe;
+  --primitive-info-dark: #2563eb;
+
+  /* ===== SEMANTIC COLORS ===== */
+  /* Primary Brand */
+  --color-primary: var(--primitive-navy);
+  --color-primary-hover: var(--primitive-navy-light);
+  --color-primary-active: var(--primitive-navy-dark);
+  --color-primary-light: var(--primitive-be-blue-50);
+
+  /* Text Colors */
+  --color-text-primary: var(--primitive-gray-900);
+  --color-text-secondary: var(--primitive-gray-600);
+  --color-text-tertiary: var(--primitive-gray-500);
+  --color-text-disabled: var(--primitive-gray-400);
+  --color-text-inverse: #ffffff;
+
+  /* Background Colors */
+  --color-background: #ffffff;
+  --color-background-alt: var(--primitive-gray-50);
+  --color-background-elevated: #ffffff;
+
+  /* Surface Colors */
+  --color-surface: #ffffff;
+  --color-surface-hover: var(--primitive-gray-50);
+  --color-surface-active: var(--primitive-gray-100);
+
+  /* Border Colors */
+  --color-border: var(--primitive-gray-200);
+  --color-border-light: var(--primitive-gray-100);
+  --color-border-dark: var(--primitive-gray-300);
+  --color-border-focus: var(--color-primary);
+
+  /* State Colors (Semantic) */
+  --color-success: var(--primitive-success);
+  --color-warning: var(--primitive-warning);
+  --color-error: var(--primitive-error);
+  --color-info: var(--primitive-info);
+
+  /* ===== TYPOGRAPHY ===== */
+  /* Font Families */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Consolas', 'Courier New', monospace;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+
+  /* ===== SPACING ===== */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* ===== LAYOUT ===== */
+  /* Sidebar */
+  --sidebar-width: 14rem;              /* 224px */
+  --sidebar-width-collapsed: 4.375rem; /* 70px */
+  --sidebar-transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Header */
+  --header-height: 4rem; /* 64px */
+
+  /* Content */
+  --content-max-width: 90rem;  /* 1440px */
+  --content-padding: var(--space-6);
+
+  /* Z-Index Layers */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* ===== BORDER RADIUS ===== */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-full: 9999px;
+
+  /* ===== SHADOWS ===== */
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* ===== TRANSITIONS ===== */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ===== COMPONENT-SPECIFIC TOKENS ===== */
+  
+  /* Sidebar */
+  --sidebar-bg: var(--color-primary);
+  --sidebar-text: rgba(255, 255, 255, 0.9);
+  --sidebar-text-secondary: rgba(255, 255, 255, 0.7);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-active-bg: rgba(255, 255, 255, 0.15);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+
+  /* Header */
+  --header-bg: var(--color-surface);
+  --header-border: var(--color-border);
+  --header-text: var(--color-text-primary);
+  --header-shadow: var(--shadow-sm);
+
+  /* Cards */
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border);
+  --card-shadow: var(--shadow-sm);
+  --card-radius: var(--radius-lg);
+  --card-padding: var(--space-6);
+
+  /* Buttons */
+  --btn-height-sm: 2rem;      /* 32px */
+  --btn-height-md: 2.5rem;    /* 40px */
+  --btn-height-lg: 3rem;      /* 48px */
+  --btn-padding-x-sm: var(--space-3);
+  --btn-padding-x-md: var(--space-4);
+  --btn-padding-x-lg: var(--space-6);
+  --btn-radius: var(--radius-md);
+  
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-text: var(--color-text-inverse);
+  --btn-primary-hover: var(--color-primary-hover);
+  --btn-primary-active: var(--color-primary-active);
+
+  /* Inputs */
+  --input-height-sm: 2rem;    /* 32px */
+  --input-height-md: 2.5rem;  /* 40px */
+  --input-height-lg: 3rem;    /* 48px */
+  --input-padding-x: var(--space-3);
+  --input-border: var(--color-border);
+  --input-border-hover: var(--color-border-dark);
+  --input-border-focus: var(--color-border-focus);
+  --input-bg: var(--color-background);
+  --input-bg-disabled: var(--color-background-alt);
+  --input-text: var(--color-text-primary);
+  --input-placeholder: var(--color-text-tertiary);
+  --input-radius: var(--radius-md);
+
+  /* Tables */
+  --table-border: var(--color-border);
+  --table-header-bg: var(--color-background-alt);
+  --table-row-hover: var(--color-surface-hover);
+  --table-row-selected: var(--color-primary-light);
+
+  /* Modals */
+  --modal-backdrop: rgba(0, 0, 0, 0.5);
+  --modal-bg: var(--color-surface);
+  --modal-shadow: var(--shadow-2xl);
+  --modal-radius: var(--radius-xl);
+  --modal-padding: var(--space-6);
+
+  /* Dashboard Widgets */
+  --widget-bg: var(--color-surface);
+  --widget-border: var(--color-border);
+  --widget-shadow: var(--shadow-sm);
+  --widget-radius: var(--radius-lg);
+  --widget-padding: var(--space-6);
+  --widget-header-border: var(--color-border);
+}
+
+/* ===== AGENCY THEME OVERRIDE PLACEHOLDER ===== */
+/* These will be set dynamically via JavaScript theme controller */
+:root {
+  --agency-primary-color: var(--color-primary);
+  --agency-primary-dark: var(--color-primary-hover);
+  --agency-logo-url: none;
+}
+
+/* ===== DARK MODE (Future Enhancement) ===== */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #000000;
+    --color-text-primary: #ffffff;
+    // ... dark mode tokens
+  }
+} */

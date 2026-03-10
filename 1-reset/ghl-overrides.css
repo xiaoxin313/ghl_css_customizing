@@ -1,0 +1,528 @@
+/**
+ * BrokerEvolve GHL Overrides
+ * Version: 1.0
+ * 
+ * CRITICAL: This file overrides GoHighLevel default styles
+ * Uses !important strategically to ensure overrides stick
+ * Targets actual GHL selectors discovered in DOM audit
+ * 
+ * Structure:
+ * 1. Sidebar overrides
+ * 2. Header overrides
+ * 3. Dashboard overrides
+ * 4. Card/Widget overrides
+ * 5. Navigation overrides
+ * 6. Button overrides
+ * 7. Form overrides
+ */
+
+/* ===== GLOBAL WRAPPER ===== */
+.be-app {
+  /* Applied to <body> via JavaScript */
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
+}
+
+/* ========================================
+   SIDEBAR OVERRIDES
+   ======================================== */
+
+/* Main Sidebar Container */
+.sidebar,
+.sidebar--main,
+.sidebar-v2-location #sidebar-v2,
+#sidebar-v2,
+aside[data-sidebar="main"],
+.left-sidebar,
+.hl_sidebar,
+nav.sidebar,
+#sidebar-v2 .default-bg-color,
+#sidebar-v2.default-bg-color {
+  background-color: var(--sidebar-bg) !important;
+  background: var(--sidebar-bg) !important;
+  width: var(--sidebar-width) !important;
+  border-right: 1px solid var(--sidebar-border) !important;
+  transition: var(--sidebar-transition) !important;
+}
+
+/* Sidebar Logo Area */
+.sidebar__logo,
+.agency-logo-container,
+#sidebar-v2 .agency-logo-container {
+  padding: var(--space-6) var(--space-3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-bottom: 1px solid var(--sidebar-border) !important;
+}
+
+.agency-logo,
+.sidebar__logo img {
+  max-width: 80% !important;
+  height: 40px !important;
+  object-fit: contain !important;
+}
+
+/* Location Switcher */
+#location-switcher-sidbar-v2,
+.location-switcher {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: var(--radius-md) !important;
+  margin: var(--space-2) var(--space-3) var(--space-4) !important;
+  padding: var(--space-2) var(--space-3) !important;
+}
+
+.hl_location-text,
+.hl_switcher-loc-name,
+.hl_switcher-loc-city {
+  color: var(--sidebar-text) !important;
+}
+
+.hl_switcher-loc-name {
+  font-weight: var(--font-semibold) !important;
+  font-size: var(--text-sm) !important;
+}
+
+.hl_switcher-loc-city {
+  font-size: var(--text-xs) !important;
+  color: var(--sidebar-text-secondary) !important;
+}
+
+/* Search Box */
+#globalSearchOpener,
+.global-search {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-md) !important;
+  padding: var(--space-2) var(--space-3) !important;
+  margin: 0 var(--space-3) var(--space-4) !important;
+  transition: var(--transition-fast) !important;
+}
+
+#globalSearchOpener:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.search-icon,
+.search-placeholder {
+  color: var(--sidebar-text-secondary) !important;
+}
+
+.search-placeholder {
+  font-size: var(--text-sm) !important;
+}
+
+.search-shortcut {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--sidebar-text-secondary) !important;
+  font-size: var(--text-xs) !important;
+  padding: 2px var(--space-2) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* Navigation Items */
+.sidebar-v2-location #sidebar-v2 .hl_nav-header nav a,
+.sidebar-v2-location #sidebar-v2 .hl_nav-settings nav a,
+.hl_nav-header nav a,
+.hl_nav-settings nav a,
+.nav-item,
+[class*="sb_"] {
+  display: flex !important;
+  align-items: center !important;
+  padding: var(--space-3) var(--space-4) !important;
+  margin: 2px var(--space-3) !important;
+  color: var(--sidebar-text) !important;
+  font-size: var(--text-sm) !important;
+  font-weight: var(--font-medium) !important;
+  text-decoration: none !important;
+  border-radius: var(--radius-md) !important;
+  border-left: 3px solid transparent !important;
+  transition: var(--transition-fast) !important;
+  opacity: 0.85 !important;
+}
+
+/* Navigation Hover */
+.sidebar-v2-location #sidebar-v2 .hl_nav-header nav a:hover,
+.sidebar-v2-location #sidebar-v2 .hl_nav-settings nav a:hover,
+.hl_nav-header nav a:hover,
+.hl_nav-settings nav a:hover,
+.nav-item:hover {
+  background: var(--sidebar-hover-bg) !important;
+  opacity: 1 !important;
+  border-left-color: transparent !important;
+}
+
+/* Navigation Active */
+.sidebar-v2-location #sidebar-v2 .hl_nav-header nav a.active,
+.sidebar-v2-location #sidebar-v2 .hl_nav-header nav a.exact-active,
+.sidebar-v2-location #sidebar-v2 .hl_nav-settings nav a.active,
+.hl_nav-header nav a.active,
+.hl_nav-header nav a.exact-active,
+.nav-item--active,
+.nav-item.active {
+  background: var(--sidebar-active-bg) !important;
+  color: var(--color-text-inverse) !important;
+  opacity: 1 !important;
+  font-weight: var(--font-semibold) !important;
+  border-left-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Navigation Icons */
+.hl_nav-header nav a img,
+.hl_nav-settings nav a img,
+.nav-item__icon {
+  width: 20px !important;
+  height: 20px !important;
+  margin-right: var(--space-3) !important;
+  flex-shrink: 0 !important;
+  opacity: 0.9 !important;
+}
+
+/* Navigation Text */
+.nav-title,
+.nav-item__text {
+  flex: 1 !important;
+  font-size: var(--text-sm) !important;
+}
+
+/* Sidebar Footer/Settings */
+.hl_nav-settings {
+  border-top: 1px solid var(--sidebar-border) !important;
+  padding-top: var(--space-3) !important;
+  margin-top: auto !important;
+}
+
+/* Sidebar Scrollbar */
+.hl_nav-header,
+.hl_nav-settings {
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent !important;
+}
+
+.hl_nav-header::-webkit-scrollbar,
+.hl_nav-settings::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.hl_nav-header::-webkit-scrollbar-track,
+.hl_nav-settings::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.hl_nav-header::-webkit-scrollbar-thumb,
+.hl_nav-settings::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-radius: var(--radius-full) !important;
+}
+
+/* ========================================
+   HEADER OVERRIDES
+   ======================================== */
+
+/* Main Header */
+.hl_header,
+header.header,
+.header-container {
+  background: var(--header-bg) !important;
+  border-bottom: 1px solid var(--header-border) !important;
+  height: var(--header-height) !important;
+  box-shadow: var(--header-shadow) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: var(--z-sticky) !important;
+}
+
+/* Header Controls */
+.hl_header--controls,
+.header-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--space-4) !important;
+}
+
+/* ========================================
+   DASHBOARD/CONTENT OVERRIDES
+   ======================================== */
+
+/* Main Content Container */
+#dashboard-container,
+.content-wrapper,
+.main-content {
+  background: var(--color-background-alt) !important;
+  padding: var(--space-6) !important;
+  min-height: calc(100vh - var(--header-height)) !important;
+}
+
+/* Dashboard Grid */
+.grid-stack,
+.dashboard-grid {
+  margin: var(--space-4) calc(-1 * var(--space-3)) !important;
+}
+
+.grid-stack-item,
+.dashboard-widget {
+  background: transparent !important;
+  border-radius: var(--widget-radius) !important;
+  overflow: hidden !important;
+}
+
+/* ========================================
+   CARD/WIDGET OVERRIDES
+   ======================================== */
+
+/* Main Card Container */
+.hl-card,
+.be-card,
+.card,
+[class*="hl-card"],
+.grid-stack-item-content > div {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: var(--card-radius) !important;
+  box-shadow: var(--card-shadow) !important;
+  overflow: hidden !important;
+}
+
+/* Card Header */
+.hl-card-header,
+.be-card__header,
+.card-header {
+  padding: var(--space-4) var(--space-6) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  background: var(--color-background) !important;
+}
+
+/* Card Title */
+.hl-text-md-medium,
+.card-title,
+.be-card__title {
+  font-size: var(--text-lg) !important;
+  font-weight: var(--font-semibold) !important;
+  color: var(--color-text-primary) !important;
+  margin: 0 !important;
+}
+
+/* Card Content */
+.hl-card-content,
+.be-card__body,
+.card-body {
+  padding: var(--card-padding) !important;
+  background: var(--card-bg) !important;
+}
+
+/* Empty State */
+.hl-empty,
+.empty-state {
+  text-align: center !important;
+  padding: var(--space-12) var(--space-6) !important;
+}
+
+.hl-empty-title,
+.empty-state-title {
+  font-size: var(--text-lg) !important;
+  color: var(--color-text-secondary) !important;
+  margin-top: var(--space-4) !important;
+}
+
+.hl-empty-icon,
+.empty-state-icon {
+  width: 48px !important;
+  height: 48px !important;
+  color: var(--color-text-tertiary) !important;
+  margin: 0 auto !important;
+}
+
+/* ========================================
+   BUTTON OVERRIDES
+   ======================================== */
+
+/* Primary Button */
+.n-button--primary-type,
+.hr-button--primary-type,
+.btn-primary,
+button[class*="primary"] {
+  background: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-text) !important;
+  border: 1px solid var(--btn-primary-bg) !important;
+  border-radius: var(--btn-radius) !important;
+  padding: 0 var(--btn-padding-x-md) !important;
+  height: var(--btn-height-md) !important;
+  font-size: var(--text-sm) !important;
+  font-weight: var(--font-medium) !important;
+  transition: var(--transition-fast) !important;
+}
+
+.n-button--primary-type:hover,
+.hr-button--primary-type:hover,
+.btn-primary:hover {
+  background: var(--btn-primary-hover) !important;
+  border-color: var(--btn-primary-hover) !important;
+}
+
+/* Default/Secondary Button */
+.n-button--default-type,
+.hr-button--default-type,
+.btn-secondary {
+  background: var(--color-background) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--btn-radius) !important;
+}
+
+.n-button--default-type:hover,
+.hr-button--default-type:hover,
+.btn-secondary:hover {
+  background: var(--color-background-alt) !important;
+  border-color: var(--color-border-dark) !important;
+}
+
+/* ========================================
+   FORM OVERRIDES
+   ======================================== */
+
+/* Input Fields */
+.n-input,
+.hr-input,
+.form-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  height: var(--input-height-md) !important;
+  padding: 0 var(--input-padding-x) !important;
+  border: 1px solid var(--input-border) !important;
+  border-radius: var(--input-radius) !important;
+  background: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  font-size: var(--text-sm) !important;
+  transition: var(--transition-fast) !important;
+}
+
+.n-input:hover,
+.hr-input:hover,
+input:hover,
+textarea:hover {
+  border-color: var(--input-border-hover) !important;
+}
+
+.n-input:focus,
+.hr-input:focus,
+input:focus,
+textarea:focus {
+  border-color: var(--input-border-focus) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1) !important;
+}
+
+/* Select Dropdowns */
+.n-select,
+.hl-select,
+select {
+  height: var(--input-height-md) !important;
+  border: 1px solid var(--input-border) !important;
+  border-radius: var(--input-radius) !important;
+  background: var(--input-bg) !important;
+}
+
+/* ========================================
+   TABLE OVERRIDES
+   ======================================== */
+
+.n-data-table,
+table {
+  border: 1px solid var(--table-border) !important;
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden !important;
+}
+
+.n-data-table thead,
+table thead {
+  background: var(--table-header-bg) !important;
+}
+
+.n-data-table tbody tr:hover,
+table tbody tr:hover {
+  background: var(--table-row-hover) !important;
+}
+
+/* ========================================
+   MODAL OVERRIDES
+   ======================================== */
+
+.n-modal,
+.n-dialog,
+.modal {
+  background: var(--modal-bg) !important;
+  border-radius: var(--modal-radius) !important;
+  box-shadow: var(--modal-shadow) !important;
+  padding: var(--modal-padding) !important;
+}
+
+.n-modal-mask,
+.modal-backdrop {
+  background: var(--modal-backdrop) !important;
+}
+
+/* ========================================
+   DIVIDER OVERRIDES
+   ======================================== */
+
+.n-divider,
+.dashboard-divider,
+hr {
+  border-color: var(--color-border) !important;
+  margin: var(--space-4) 0 !important;
+}
+
+/* ========================================
+   RESPONSIVE SIDEBAR
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* Hide sidebar on mobile by default */
+  .sidebar,
+  #sidebar-v2 {
+    transform: translateX(-100%) !important;
+    position: fixed !important;
+    z-index: var(--z-fixed) !important;
+  }
+
+  /* Show sidebar when mobile menu is open */
+  .sidebar--mobile-open,
+  #sidebar-v2.mobile-open {
+    transform: translateX(0) !important;
+  }
+
+  /* Adjust main content when sidebar is hidden */
+  .content-wrapper,
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Ensure sidebar is visible on desktop */
+  .sidebar,
+  #sidebar-v2 {
+    transform: translateX(0) !important;
+  }
+}
+
+/* ========================================
+   UTILITY OVERRIDES
+   ======================================== */
+
+/* Remove GHL branding */
+[class*="ghl-"],
+[class*="highlevel"],
+[data-ghl-branding] {
+  display: none !important;
+}
+
+/* Ensure BrokerEvolve branding is visible */
+[data-be-branding],
+.be-branding {
+  display: block !important;
+}
