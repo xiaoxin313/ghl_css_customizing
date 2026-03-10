@@ -1,10 +1,10 @@
 /**
  * BrokerEvolve Design Tokens
- * Version: 1.2
+ * Version: 1.3
  * Last Updated: March 2026
  *
- * Token system only. Values preserve existing UI/UX — no visual change.
- * Swap tokens here for theming; overrides reference these only.
+ * Solid token system. Sidebar tokens match BrokerEvolve reference (dark indigo,
+ * muted text, subtle active state). Swap tokens here for theming.
  */
 
 :root {
@@ -64,6 +64,17 @@
 
   --primitive-accent-teal: #50e3c2;
   --primitive-accent-teal-dark: #2dd4b0;
+
+  /* Sidebar (BrokerEvolve reference — dark indigo/slate, muted text, subtle active) */
+  --primitive-sidebar-bg: #1f212c;
+  --primitive-sidebar-active-bg: #2d3242;
+  --primitive-sidebar-search-bg: #272935;
+  --primitive-sidebar-search-shortcut-bg: #4c515f;
+  --primitive-sidebar-separator: #3d414d;
+  --primitive-sidebar-text: #a0a4b3;
+  --primitive-sidebar-text-active: #ffffff;
+  --primitive-sidebar-collapse-btn: #4cff00;
+  --primitive-sidebar-collapse-btn-hover: #6bff24;
 
   /* ===== SEMANTIC COLORS ===== */
   /* Primary Brand (sidebar, primary buttons — unchanged visually) */
@@ -210,18 +221,25 @@
 
   /* ===== COMPONENT-SPECIFIC TOKENS ===== */
 
-  /* Sidebar (token-only; values preserve existing look) */
-  --sidebar-bg: var(--color-shell);
-  --sidebar-text: var(--color-text-on-shell);
-  --sidebar-text-secondary: var(--color-text-on-shell-muted);
-  --sidebar-hover-bg: rgba(255, 255, 255, 0.1);
-  --sidebar-active-bg: rgba(255, 255, 255, 0.15);
-  --sidebar-active-text: var(--color-text-inverse);
+  /* Sidebar (BrokerEvolve reference: dark indigo, muted text, subtle active state) */
+  --sidebar-bg: var(--primitive-sidebar-bg);
+  --sidebar-text: var(--primitive-sidebar-text);
+  --sidebar-text-secondary: var(--primitive-sidebar-text);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.06);
+  --sidebar-active-bg: var(--primitive-sidebar-active-bg);
+  --sidebar-active-text: var(--primitive-sidebar-text-active);
   --sidebar-active-border-left: transparent;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-search-bg: rgba(255, 255, 255, 0.06);
-  --sidebar-search-placeholder: var(--color-text-on-shell-muted);
+  --sidebar-border: var(--primitive-sidebar-separator);
+  --sidebar-separator: var(--primitive-sidebar-separator);
+  --sidebar-search-bg: var(--primitive-sidebar-search-bg);
+  --sidebar-search-placeholder: var(--primitive-sidebar-text);
   --sidebar-search-radius: var(--radius-md);
+  --sidebar-search-shortcut-bg: var(--primitive-sidebar-search-shortcut-bg);
+  --sidebar-collapse-btn-bg: var(--primitive-sidebar-collapse-btn);
+  --sidebar-collapse-btn-hover: var(--primitive-sidebar-collapse-btn-hover);
+  --sidebar-logo-text: var(--primitive-sidebar-text-active);
+  --sidebar-account-text: var(--primitive-sidebar-text-active);
+  --sidebar-location-text: var(--primitive-sidebar-text);
 
   /* Header */
   --header-bg: var(--color-surface);

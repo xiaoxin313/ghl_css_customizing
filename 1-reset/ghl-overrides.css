@@ -85,11 +85,12 @@ nav.sidebar,
 .hl_switcher-loc-name {
   font-weight: var(--font-semibold) !important;
   font-size: var(--text-sm) !important;
+  color: var(--sidebar-account-text) !important;
 }
 
 .hl_switcher-loc-city {
   font-size: var(--text-xs) !important;
-  color: var(--sidebar-text-secondary) !important;
+  color: var(--sidebar-location-text) !important;
 }
 
 /* Search Box */
@@ -116,8 +117,8 @@ nav.sidebar,
 }
 
 .search-shortcut {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: var(--sidebar-text-secondary) !important;
+  background: var(--sidebar-search-shortcut-bg) !important;
+  color: var(--sidebar-text-active) !important;
   font-size: var(--text-xs) !important;
   padding: 2px var(--space-2) !important;
   border-radius: var(--radius-sm) !important;
@@ -136,12 +137,11 @@ nav.sidebar,
   margin: 2px var(--space-3) !important;
   color: var(--sidebar-text) !important;
   font-size: var(--text-sm) !important;
-  font-weight: var(--font-medium) !important;
+  font-weight: var(--font-normal) !important;
   text-decoration: none !important;
   border-radius: var(--radius-md) !important;
   border-left: 3px solid transparent !important;
   transition: var(--transition-fast) !important;
-  opacity: 0.85 !important;
 }
 
 /* Navigation Hover */
@@ -151,11 +151,10 @@ nav.sidebar,
 .hl_nav-settings nav a:hover,
 .nav-item:hover {
   background: var(--sidebar-hover-bg) !important;
-  opacity: 1 !important;
   border-left-color: transparent !important;
 }
 
-/* Navigation Active */
+/* Navigation Active (subtle darker background, white text — BrokerEvolve reference) */
 .sidebar-v2-location #sidebar-v2 .hl_nav-header nav a.active,
 .sidebar-v2-location #sidebar-v2 .hl_nav-header nav a.exact-active,
 .sidebar-v2-location #sidebar-v2 .hl_nav-settings nav a.active,
@@ -164,10 +163,9 @@ nav.sidebar,
 .nav-item--active,
 .nav-item.active {
   background: var(--sidebar-active-bg) !important;
-  color: var(--color-text-inverse) !important;
-  opacity: 1 !important;
+  color: var(--sidebar-active-text) !important;
   font-weight: var(--font-semibold) !important;
-  border-left-color: rgba(255, 255, 255, 0.5) !important;
+  border-left-color: transparent !important;
 }
 
 /* Navigation Icons */
@@ -178,7 +176,12 @@ nav.sidebar,
   height: 20px !important;
   margin-right: var(--space-3) !important;
   flex-shrink: 0 !important;
-  opacity: 0.9 !important;
+}
+
+.hl_nav-header nav a.active img,
+.hl_nav-header nav a.exact-active img,
+.nav-item.active .nav-item__icon {
+  opacity: 1 !important;
 }
 
 /* Navigation Text */
@@ -188,11 +191,32 @@ nav.sidebar,
   font-size: var(--text-sm) !important;
 }
 
-/* Sidebar Footer/Settings */
+/* Sidebar Footer/Settings (separator from reference) */
 .hl_nav-settings {
-  border-top: 1px solid var(--sidebar-border) !important;
+  border-top: 1px solid var(--sidebar-separator) !important;
   padding-top: var(--space-3) !important;
   margin-top: auto !important;
+}
+
+/* Collapse/expand sidebar button (BrokerEvolve reference: light green) */
+.sidebar-collapse-btn,
+[class*="sidebar-toggle"],
+[class*="collapse-sidebar"],
+#sidebar-v2 [class*="collapse"]:not(nav),
+#sidebar-v2 [class*="toggle"] {
+  background: var(--sidebar-collapse-btn-bg) !important;
+  color: var(--primitive-sidebar-bg) !important;
+  border-radius: var(--radius-full) !important;
+  border: none !important;
+  transition: var(--transition-fast) !important;
+}
+
+.sidebar-collapse-btn:hover,
+[class*="sidebar-toggle"]:hover,
+[class*="collapse-sidebar"]:hover,
+#sidebar-v2 [class*="collapse"]:not(nav):hover,
+#sidebar-v2 [class*="toggle"]:hover {
+  background: var(--sidebar-collapse-btn-hover) !important;
 }
 
 /* Sidebar Scrollbar */
