@@ -1,41 +1,40 @@
 /**
  * BrokerEvolve Design Tokens
- * Version: 1.1
+ * Version: 1.2
  * Last Updated: March 2026
  *
- * Derived from BrokerEvolve GHL UI screenshots (Dashboard, Conversations,
- * Manual Actions, Snippets, Calendars, Contacts, Opportunities).
- * Never hardcode values - always reference tokens.
+ * Token system only. Values preserve existing UI/UX — no visual change.
+ * Swap tokens here for theming; overrides reference these only.
  */
 
 :root {
   /* ===== PRIMITIVE COLORS ===== */
-  /* BrokerEvolve accent blue (buttons, active nav, links) */
-  --primitive-be-blue-50: #eff6ff;
-  --primitive-be-blue-100: #dbeafe;
-  --primitive-be-blue-200: #bfdbfe;
-  --primitive-be-blue-300: #93c5fd;
-  --primitive-be-blue-400: #60a5fa;
-  --primitive-be-blue-500: #3b82f6;
-  --primitive-be-blue-600: #2563eb;
-  --primitive-be-blue-700: #1d4ed8;
-  --primitive-be-blue-800: #1e40af;
-  --primitive-be-blue-900: #1e3a8a;
+  /* BrokerEvolve Primary Blue */
+  --primitive-be-blue-50: #e6f2ff;
+  --primitive-be-blue-100: #b3d9ff;
+  --primitive-be-blue-200: #80c0ff;
+  --primitive-be-blue-300: #4da6ff;
+  --primitive-be-blue-400: #1a8dff;
+  --primitive-be-blue-500: #0066cc;
+  --primitive-be-blue-600: #0052a3;
+  --primitive-be-blue-700: #003d7a;
+  --primitive-be-blue-800: #002952;
+  --primitive-be-blue-900: #001429;
 
-  /* Shell (sidebar / dark header) - from screenshots */
-  --primitive-shell-900: #151c2f;
-  --primitive-shell-800: #1e293b;
-  --primitive-shell-700: #252d3a;
-  --primitive-shell-600: #2b3b50;
-  --primitive-shell-500: #334155;
+  /* Shell (sidebar / dark header) — alias for theming; default matches primary */
+  --primitive-shell-900: #020617;
+  --primitive-shell-800: #0f172a;
+  --primitive-shell-700: #1e293b;
+  --primitive-shell-600: #334155;
+  --primitive-shell-500: #475569;
 
-  /* Navy (legacy / alternate brand) */
+  /* Navy (Mike's preferred from test account) */
   --primitive-navy: #020617;
   --primitive-navy-light: #0f172a;
   --primitive-navy-dark: #000000;
 
-  /* Neutral grays (content area, borders, text) */
-  --primitive-gray-50: #f8f9fa;
+  /* Neutral Grays */
+  --primitive-gray-50: #f9fafb;
   --primitive-gray-100: #f3f4f6;
   --primitive-gray-200: #e5e7eb;
   --primitive-gray-300: #d1d5db;
@@ -46,7 +45,7 @@
   --primitive-gray-800: #1f2937;
   --primitive-gray-900: #111827;
 
-  /* State colors */
+  /* State Colors */
   --primitive-success: #10b981;
   --primitive-success-light: #d1fae5;
   --primitive-success-dark: #047857;
@@ -63,28 +62,27 @@
   --primitive-info-light: #dbeafe;
   --primitive-info-dark: #2563eb;
 
-  /* Accent teal (active border / highlight in some views) */
   --primitive-accent-teal: #50e3c2;
   --primitive-accent-teal-dark: #2dd4b0;
 
   /* ===== SEMANTIC COLORS ===== */
-  /* Primary Brand */
+  /* Primary Brand (sidebar, primary buttons — unchanged visually) */
   --color-primary: var(--primitive-navy);
   --color-primary-hover: var(--primitive-navy-light);
   --color-primary-active: var(--primitive-navy-dark);
   --color-primary-light: var(--primitive-be-blue-50);
 
-  /* Accent / interactive primary (buttons, active nav, links) - from screenshots */
-  --color-accent: var(--primitive-be-blue-500);
-  --color-accent-hover: var(--primitive-be-blue-600);
-  --color-accent-active: var(--primitive-be-blue-700);
-  --color-accent-light: var(--primitive-be-blue-50);
+  /* Accent (for theming; defaults to primary so no visual change) */
+  --color-accent: var(--color-primary);
+  --color-accent-hover: var(--color-primary-hover);
+  --color-accent-active: var(--color-primary-active);
+  --color-accent-light: var(--color-primary-light);
 
-  /* Shell (sidebar and dark header) - from screenshots */
-  --color-shell: var(--primitive-shell-800);
-  --color-shell-hover: var(--primitive-shell-700);
-  --color-shell-active: var(--primitive-shell-600);
-  --color-shell-border: rgba(255, 255, 255, 0.08);
+  /* Shell (sidebar/header; defaults to primary so no visual change) */
+  --color-shell: var(--color-primary);
+  --color-shell-hover: var(--color-primary-hover);
+  --color-shell-active: var(--color-primary-active);
+  --color-shell-border: rgba(255, 255, 255, 0.1);
 
   /* Text Colors */
   --color-text-primary: var(--primitive-gray-900);
@@ -92,10 +90,10 @@
   --color-text-tertiary: var(--primitive-gray-500);
   --color-text-disabled: var(--primitive-gray-400);
   --color-text-inverse: #ffffff;
-  --color-text-on-shell: rgba(255, 255, 255, 0.95);
+  --color-text-on-shell: rgba(255, 255, 255, 0.9);
   --color-text-on-shell-muted: rgba(255, 255, 255, 0.7);
 
-  /* Background Colors */
+  /* Background Colors (main content stays light) */
   --color-background: #ffffff;
   --color-background-alt: var(--primitive-gray-50);
   --color-background-content: var(--primitive-gray-50);
@@ -110,7 +108,7 @@
   --color-border: var(--primitive-gray-200);
   --color-border-light: var(--primitive-gray-100);
   --color-border-dark: var(--primitive-gray-300);
-  --color-border-focus: var(--color-accent);
+  --color-border-focus: var(--color-primary);
 
   /* State Colors (Semantic) */
   --color-success: var(--primitive-success);
@@ -212,35 +210,35 @@
 
   /* ===== COMPONENT-SPECIFIC TOKENS ===== */
 
-  /* Sidebar (from screenshots: dark shell, white text, blue active) */
+  /* Sidebar (token-only; values preserve existing look) */
   --sidebar-bg: var(--color-shell);
   --sidebar-text: var(--color-text-on-shell);
   --sidebar-text-secondary: var(--color-text-on-shell-muted);
-  --sidebar-hover-bg: var(--color-shell-hover);
-  --sidebar-active-bg: var(--color-accent);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-active-bg: rgba(255, 255, 255, 0.15);
   --sidebar-active-text: var(--color-text-inverse);
-  --sidebar-active-border-left: var(--primitive-accent-teal);
-  --sidebar-border: var(--color-shell-border);
+  --sidebar-active-border-left: transparent;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-search-bg: rgba(255, 255, 255, 0.06);
   --sidebar-search-placeholder: var(--color-text-on-shell-muted);
-  --sidebar-search-radius: var(--radius-full);
+  --sidebar-search-radius: var(--radius-md);
 
-  /* Header (light content area vs dark module header) */
+  /* Header */
   --header-bg: var(--color-surface);
   --header-bg-dark: var(--color-shell);
   --header-border: var(--color-border);
   --header-border-dark: var(--color-shell-border);
   --header-text: var(--color-text-primary);
   --header-text-dark: var(--color-text-on-shell);
-  --header-tab-active-underline: var(--color-accent);
+  --header-tab-active-underline: var(--color-primary);
   --header-shadow: var(--shadow-sm);
 
-  /* Nav (sidebar + header tabs) */
+  /* Nav */
   --nav-item-color: var(--sidebar-text);
   --nav-item-hover-bg: var(--sidebar-hover-bg);
   --nav-item-active-bg: var(--sidebar-active-bg);
   --nav-item-active-color: var(--sidebar-active-text);
-  --nav-item-active-border: var(--color-accent);
+  --nav-item-active-border: var(--color-primary);
   --nav-item-active-border-teal: var(--primitive-accent-teal);
 
   /* Cards */
@@ -250,7 +248,7 @@
   --card-radius: var(--radius-lg);
   --card-padding: var(--space-6);
 
-  /* Buttons (from screenshots: blue primary, white secondary with blue border) */
+  /* Buttons (token-only; primary = primary brand) */
   --btn-height-sm: 2rem;
   --btn-height-md: 2.5rem;
   --btn-height-lg: 3rem;
@@ -259,17 +257,17 @@
   --btn-padding-x-lg: var(--space-6);
   --btn-radius: var(--radius-md);
 
-  --btn-primary-bg: var(--color-accent);
+  --btn-primary-bg: var(--color-primary);
   --btn-primary-text: var(--color-text-inverse);
-  --btn-primary-hover: var(--color-accent-hover);
-  --btn-primary-active: var(--color-accent-active);
+  --btn-primary-hover: var(--color-primary-hover);
+  --btn-primary-active: var(--color-primary-active);
 
   --btn-secondary-bg: var(--color-surface);
-  --btn-secondary-text: var(--color-accent);
-  --btn-secondary-border: var(--color-accent);
+  --btn-secondary-text: var(--color-primary);
+  --btn-secondary-border: var(--color-primary);
   --btn-secondary-hover-bg: var(--color-surface-hover);
 
-  /* Inputs (light content + dark sidebar search) */
+  /* Inputs */
   --input-height-sm: 2rem;
   --input-height-md: 2.5rem;
   --input-height-lg: 3rem;
@@ -288,7 +286,7 @@
   --table-border: var(--color-border);
   --table-header-bg: var(--color-background-alt);
   --table-row-hover: var(--color-surface-hover);
-  --table-row-selected: var(--color-accent-light);
+  --table-row-selected: var(--color-primary-light);
 
   /* Modals */
   --modal-backdrop: rgba(0, 0, 0, 0.5);
@@ -297,8 +295,8 @@
   --modal-radius: var(--radius-xl);
   --modal-padding: var(--space-6);
 
-  /* Dashboard / content area */
-  --content-bg: var(--color-background-content);
+  /* Main content area (always light) */
+  --content-bg: var(--color-background-alt);
 
   /* Dashboard Widgets */
   --widget-bg: var(--color-surface);
@@ -319,10 +317,10 @@
 }
 
 /* ===== AGENCY THEME OVERRIDE PLACEHOLDER ===== */
-/* Set via JavaScript theme controller for agency branding / logo-based colors */
+/* Set via JavaScript for agency branding; defaults to primary (no visual change) */
 :root {
-  --agency-primary-color: var(--color-accent);
-  --agency-primary-dark: var(--color-accent-hover);
+  --agency-primary-color: var(--color-primary);
+  --agency-primary-dark: var(--color-primary-hover);
   --agency-logo-url: none;
 }
 

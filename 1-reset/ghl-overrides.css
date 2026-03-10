@@ -1,10 +1,9 @@
 /**
  * BrokerEvolve GHL Overrides
- * Version: 1.1
+ * Version: 1.2
  *
- * Overrides GoHighLevel default styles using BrokerEvolve design tokens
- * (screenshot-derived: dark shell, blue accent, light content area).
- * Uses !important only where GHL specificity requires it.
+ * Token-based overrides only. No intentional UI/UX or visual change.
+ * Uses design tokens so theming can be done by swapping token values.
  *
  * Structure:
  * 1. Sidebar overrides
@@ -18,9 +17,14 @@
 
 /* ===== GLOBAL WRAPPER ===== */
 .be-app {
-  /* Applied to <body> via JavaScript */
   font-family: var(--font-primary);
   color: var(--color-text-primary);
+}
+
+/* Ensure page background stays light (main content area never dark) */
+body,
+html[data-theme] {
+  background: var(--color-background-alt) !important;
 }
 
 /* ========================================
@@ -244,10 +248,13 @@ header.header,
    DASHBOARD/CONTENT OVERRIDES
    ======================================== */
 
-/* Main Content Container */
+/* Main Content Container (keep right-hand area light; token-only) */
 #dashboard-container,
 .content-wrapper,
-.main-content {
+.main-content,
+.main-wrapper,
+[data-main-content],
+.app-content-area {
   background: var(--content-bg) !important;
   padding: var(--space-6) !important;
   min-height: calc(100vh - var(--header-height)) !important;
