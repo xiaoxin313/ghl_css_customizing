@@ -1,11 +1,11 @@
 /**
  * BrokerEvolve GHL Overrides
- * Version: 1.0
- * 
- * CRITICAL: This file overrides GoHighLevel default styles
- * Uses !important strategically to ensure overrides stick
- * Targets actual GHL selectors discovered in DOM audit
- * 
+ * Version: 1.1
+ *
+ * Overrides GoHighLevel default styles using BrokerEvolve design tokens
+ * (screenshot-derived: dark shell, blue accent, light content area).
+ * Uses !important only where GHL specificity requires it.
+ *
  * Structure:
  * 1. Sidebar overrides
  * 2. Header overrides
@@ -66,7 +66,7 @@ nav.sidebar,
 /* Location Switcher */
 #location-switcher-sidbar-v2,
 .location-switcher {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: var(--sidebar-search-bg) !important;
   border-radius: var(--radius-md) !important;
   margin: var(--space-2) var(--space-3) var(--space-4) !important;
   padding: var(--space-2) var(--space-3) !important;
@@ -91,20 +91,20 @@ nav.sidebar,
 /* Search Box */
 #globalSearchOpener,
 .global-search {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-radius: var(--radius-md) !important;
+  background: var(--sidebar-search-bg) !important;
+  border-radius: var(--sidebar-search-radius) !important;
   padding: var(--space-2) var(--space-3) !important;
   margin: 0 var(--space-3) var(--space-4) !important;
   transition: var(--transition-fast) !important;
 }
 
 #globalSearchOpener:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: var(--sidebar-hover-bg) !important;
 }
 
 .search-icon,
 .search-placeholder {
-  color: var(--sidebar-text-secondary) !important;
+  color: var(--sidebar-search-placeholder) !important;
 }
 
 .search-placeholder {
@@ -248,7 +248,7 @@ header.header,
 #dashboard-container,
 .content-wrapper,
 .main-content {
-  background: var(--color-background-alt) !important;
+  background: var(--content-bg) !important;
   padding: var(--space-6) !important;
   min-height: calc(100vh - var(--header-height)) !important;
 }
