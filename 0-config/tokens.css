@@ -76,6 +76,11 @@
   --primitive-sidebar-collapse-btn: #4cff00;
   --primitive-sidebar-collapse-btn-hover: #6bff24;
 
+  /* Header (BrokerEvolve reference — dark blue, thin light top edge) */
+  --primitive-header-bg: #0c1123;
+  --primitive-header-border-top: #e5e7eb;
+  --primitive-header-border-bottom: rgba(255, 255, 255, 0.06);
+
   /* ===== SEMANTIC COLORS ===== */
   /* Primary Brand (sidebar, primary buttons — unchanged visually) */
   --color-primary: var(--primitive-navy);
@@ -248,11 +253,12 @@
   --sidebar-nav-margin-x: var(--space-2);
   --sidebar-nav-gap: var(--space-1);
 
-  /* Header */
+  /* Header (BrokerEvolve reference: dark blue, thin light top border) */
   --header-bg: var(--color-surface);
-  --header-bg-dark: var(--color-shell);
+  --header-bg-dark: var(--primitive-header-bg);
   --header-border: var(--color-border);
-  --header-border-dark: var(--color-shell-border);
+  --header-border-dark: var(--primitive-header-border-bottom);
+  --header-border-top: var(--primitive-header-border-top);
   --header-text: var(--color-text-primary);
   --header-text-dark: var(--color-text-on-shell);
   --header-tab-active-underline: var(--color-primary);

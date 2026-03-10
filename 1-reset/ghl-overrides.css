@@ -27,6 +27,20 @@ html[data-theme] {
   background: var(--color-background-alt) !important;
 }
 
+/* Remove unintended top border/outline (e.g. red line above header) */
+html,
+body,
+.be-app,
+[data-app],
+.app-wrapper,
+#app,
+.main-layout {
+  border: none !important;
+  border-top: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* ========================================
    SIDEBAR OVERRIDES
    ======================================== */
@@ -247,25 +261,33 @@ nav.sidebar,
    HEADER OVERRIDES
    ======================================== */
 
-/* Main Header */
+/* Main Header (BrokerEvolve reference: dark blue, thin light top edge, no clipping) */
 .hl_header,
 header.header,
 .header-container {
-  background: var(--header-bg) !important;
-  border-bottom: 1px solid var(--header-border) !important;
-  height: var(--header-height) !important;
+  background: var(--header-bg-dark) !important;
+  border-top: 1px solid var(--header-border-top) !important;
+  border-bottom: 1px solid var(--header-border-dark) !important;
+  min-height: var(--header-height) !important;
+  height: auto !important;
   box-shadow: var(--header-shadow) !important;
   position: sticky !important;
   top: 0 !important;
   z-index: var(--z-sticky) !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+  flex-wrap: nowrap !important;
 }
 
-/* Header Controls */
+/* Header inner / controls (vertically center icons, compact spacing) */
 .hl_header--controls,
 .header-controls {
   display: flex !important;
   align-items: center !important;
-  gap: var(--space-4) !important;
+  gap: var(--space-3) !important;
+  min-height: var(--header-height) !important;
+  overflow: visible !important;
 }
 
 /* ========================================
