@@ -41,6 +41,16 @@ body,
   box-shadow: none !important;
 }
 
+/* Safety: ensure app/content wrappers never inherit header background */
+.content-wrapper,
+.main-content,
+.main-wrapper,
+#dashboard-container,
+[data-main-content],
+.app-content-area {
+  background: var(--content-bg) !important;
+}
+
 /* ========================================
    SIDEBAR OVERRIDES
    ======================================== */
@@ -261,10 +271,9 @@ nav.sidebar,
    HEADER OVERRIDES
    ======================================== */
 
-/* Main Header (BrokerEvolve reference: dark blue, thin light top edge, no clipping) */
+/* Main Header (top bar only) */
 .hl_header,
-header.header,
-.header-container {
+header.header {
   background: var(--header-bg-dark) !important;
   border-top: 1px solid var(--header-border-top) !important;
   border-bottom: 1px solid var(--header-border-dark) !important;
